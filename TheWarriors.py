@@ -4,12 +4,16 @@ class Army:
 
 
 class Warrior:
-    health = 50
-    attack = 5
-    is_alive = True
+    def __init__(self):
+        self.health = 50
+        self.attack = 5
+        self.is_alive = True
 
 class Knight(Warrior):
-    attack = 7
+    def __init__(self):
+        self.attack = 7
+        self.health = 50
+        self.is_alive = True
 
 def fight(unit_1, unit_2):
     while True:
@@ -34,22 +38,22 @@ if __name__ == '__main__':
     dave = Warrior()
     mark = Warrior()
 
-    print(fight(chuck, bruce))
-    print(fight(dave, carl))
-    print(chuck.is_alive)
-    print(bruce.is_alive)
-    print(carl.is_alive)
-    print(dave.is_alive)
-    print(fight(carl, mark))
-    print(carl.is_alive)
+    # print(fight(chuck, bruce))
+    # print(fight(dave, carl))
+    # print(chuck.is_alive)
+    # print(bruce.is_alive)
+    # print(carl.is_alive)
+    # print(dave.is_alive)
+    # print(fight(carl, mark))
+    # print(carl.is_alive)
 
-    # assert fight(chuck, bruce) == True
-    # assert fight(dave, carl) == False
-    # assert chuck.is_alive == True
-    # assert bruce.is_alive == False
-    # assert carl.is_alive == True
-    # assert dave.is_alive == False
-    # assert fight(carl, mark) == False
-    # assert carl.is_alive == False
+    assert fight(chuck, bruce) == True
+    assert fight(dave, carl) == False
+    assert chuck.is_alive == True
+    assert bruce.is_alive == False
+    assert carl.is_alive == True
+    assert dave.is_alive == False
+    assert fight(carl, mark) == False
+    assert carl.is_alive == False
 
     print("Coding complete? Let's try tests!")
