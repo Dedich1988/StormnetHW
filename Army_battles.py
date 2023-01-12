@@ -1,10 +1,14 @@
 class Warrior:
-    health = 50
-    attack = 5
-    is_alive = True
+    def __init__(self):
+        self.health = 50
+        self.attack = 5
+        self.is_alive = True
 
 class Knight(Warrior):
-    attack = 7
+    def __init__(self):
+        self.health = 50
+        self.attack = 7
+        self.is_alive = True
 
 
 def fight(unit_1, unit_2):
@@ -24,7 +28,8 @@ class Army:
 
     def add_units(self, unit, count):
         for i in range(count):
-            self.army.append(unit)
+
+            self.army.append(unit())
 
 class Battle():
 
@@ -36,7 +41,7 @@ class Battle():
             if army_2.army[self.j].health < 0:
                 army_2.army[self.j].is_alive = False
 
-                if self.j+1 == len(army_2.army):
+                if self.j + 1 == len(army_2.army):
                     return True
                 else:
                     self.j += 1
@@ -46,7 +51,7 @@ class Battle():
             if army_1.army[self.i].health < 0:
                 army_1.army[self.i].is_alive = False
 
-                if self.i+1 == len(army_1.army):
+                if self.i + 1 == len(army_1.army):
                     return False
                 else:
                     self.i += 1
